@@ -1,0 +1,43 @@
+.details{
+    margin:50px;
+    width:1000px;
+}
+
+.details-img{
+    width: 100%;
+}
+
+.details-title{
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    padding:20px 0px;
+    font-size:40px;
+    border-bottom: 3px solid pink;
+}
+
+.details-wrapper{
+    display: flex;
+    justify-content: space-around;
+    padding:20px 0px;
+    color: black;
+}
+
+.details-date, .details-author{
+    border-bottom: 2px solid pink;
+    padding-bottom: 4px;
+}
+
+.details-description{
+    margin-top: 19px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+.details-description::first-letter{
+    margin-left: 50px;
+    font-size: 35px;
+    
+}

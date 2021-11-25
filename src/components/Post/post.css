@@ -1,0 +1,38 @@
+.post{
+    width: 400px;
+    margin:50px;
+    text-align: center; 
+}
+
+.post-img{
+    width: 100%;
+}
+
+.post-title{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    padding-top:7px;
+    font-size:20px;
+    border-bottom: 1px solid pink;
+}
+
+.post-wrapper{
+    display: flex;
+    justify-content: space-around;
+    padding:7px 0px;
+    color: rgb(204, 137, 148);
+}
+
+.post-description{
+    margin-top: 9px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
