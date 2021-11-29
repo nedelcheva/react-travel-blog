@@ -10,16 +10,6 @@ const Sidebar = (props) => {
 
                     <ul className="categories-list">
                         <div className="categories-wrapper">
-                            <li className="categories-list-items">Mountains</li>
-                            <li className="categories-list-items">Sea</li>
-                        </div>
-                        <div className="categories-wrapper">
-                            <li className="categories-list-items">Famous Towns</li>
-                            <li className="categories-list-items">Others</li>
-                        </div>
-                    </ul>
-                    <ul className="categories-list">
-                        <div className="categories-wrapper">
                             <li className="categories-list-items">Europe</li>
                             <li className="categories-list-items">Africa</li>
                         </div>
