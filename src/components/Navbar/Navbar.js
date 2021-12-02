@@ -1,22 +1,25 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import './navbar.css';
+import { useAuth } from '../../contexts/AuthContext';
+import { useNavigate } from 'react-router-dom'
 
 
 export default function Navbar() {
-    // const [button, setButton] = useState(true);
+    const [error, setError] = useState("")
+    const {currentUser, logout } = useAuth()
+    const navigate = useNavigate()
 
-    // const showButton = () => {
-    //     if(window.innerWidth <= 960) {
-    //         setButton(false);
-    //     } else{
-    //         setButton(true);
-    //     }
-    // };
+    async function handleLogout() {
+        setError('')
 
-    // useEffect(() => {
-    //     showButton();
-    // }, []);
+        try {
+            await logout()
+            navigate('/')
+        } catch {
+            setError('Failed to log out')
+        }
+    }
 
 
     return (
@@ -43,8 +46,13 @@ export default function Navbar() {
             </div>
             <div className="navbar-right">
 
-                <button className="navbar-right-button">LOGIN</button>
-                <button className="navbar-right-button">REGISTER</button>
+                <button className="navbar-right-button">
+                <Link className="link" to="/signup">LOGIN</Link>
+                </button>
+                <button className="navbar-right-button">
+                <Link className="link" to="/register">REGISTER</Link>
+                </button>
+                <button className="navbar-right-button" onClick={handleLogout}>LOGOUT</button>
 
             </div>
         </div>

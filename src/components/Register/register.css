@@ -1,0 +1,55 @@
+.register{
+    display: flex;
+    justify-content: center;
+}
+
+.register-form{
+    width: 500px;
+    padding:50px;
+    border:3px solid pink;
+    justify-content: center;
+}
+
+.title{
+    text-align: center;
+    padding-bottom:28px;
+    font-weight: 300;
+    font-size: 40px;
+    border-bottom: 3px solid pink;
+}
+
+.add-container{
+    display: flex;
+    flex-direction: column;
+    padding:0px 10px;
+    padding-top: 35px;
+    font-size: 25px;
+    font-weight: 300;
+    
+}
+
+input[type=email], input[type=password]{
+    width: 100%;
+    padding: 12px 20px;
+    margin-top:10px;
+    margin-bottom:30px;
+    display: inline-block;
+    border: 2px solid pink;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 300;
+  }
+
+  .button-submit{
+    margin-top: 15px;
+    width: 100%;
+    padding:10px;
+    font-size: 25px;
+    background: white;
+    border: 2px solid pink;
+}
+
+.button-submit:hover{
+    background-color: pink;
+    color: white;
+}
