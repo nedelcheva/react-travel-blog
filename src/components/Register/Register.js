@@ -39,16 +39,16 @@ export default function Register() {
 
                 <div className="add-container">
 
-                    <label for="email">Email</label>
+                    <label name="email">Email</label>
                     <input type="email" ref={emailRef} placeholder="Enter E-Mail" name="email" required />
 
-                    <label for="psw">Password</label>
+                    <label name="psw">Password</label>
                     <input type="password" ref={passwordRef} placeholder="Enter Password" name="psw" required />
 
-                    <label for="repeat-psw">Repeat Password</label>
+                    <label name="repeat-psw">Repeat Password</label>
                     <input type="password" ref={passwordConfirmRef} placeholder="Repeat Password" name="repeat-psw" required />
 
-                    <button disabled={loading} class="button-submit" type="submit">Register</button>
+                    <button disabled={loading} className="button-submit" type="submit">Register</button>
                 </div>
             </form>
         </div>

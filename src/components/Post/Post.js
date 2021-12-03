@@ -1,17 +1,43 @@
 import React from 'react'
 import './post.css'
+import { db } from '../../firebase'
+import { useState, useEffect } from 'react'
+import { collection, getDocs } from "firebase/firestore"
+
 
 export default function Post() {
+    const [posts, setPosts] = useState([])
+    const postsCollectionRef = collection(db, "posts")
+
+    useEffect(() => {
+        const getPosts = async () => {
+            const data = await getDocs(postsCollectionRef)
+            setPosts(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+        }
+
+        getPosts()
+    }, [])
+
+
     return (
-        <div className="post">
-            <img className="post-img" src={require('../../images/mexico.jpg').default}/>
-            <div className="post-title">Two weeks in Mexico</div>
-            <div className="post-wrapper">
-               <div className="post-category">America</div>
-            <div className="post-date">25.11.2021</div> 
-            </div>
-            <div className="post-description">Redundant alt attribute. Screen-readers already announce `img` tags as an image. You don’t need to use the words `image`, `photo,` or `picture` (or any specified custom words) in the alt propRedundant alt attribute. Screen-readers already announce `img` tags as an image. You don’t need to use the words `image`, `photo,` or `picture` (or any specified custom words) in the alt prop</div>
-            
+        <div>
+            {
+                posts.map((post) => {
+                    return (
+                        <div className="post">
+                            <img className="post-img" src={require('../../images/mexico.jpg').default} />
+                            <div className="post-title" >{post.title}</div>
+                            <div className="post-wrapper">
+                                <div className="post-category" >{post.category}</div>
+                                <div className="post-date">{post.date}</div>
+                            </div>
+                            <div className="post-description">{post.article}</div>
+                        </div>
+                    )
+                })
+            }
+
         </div>
+
     )
 }

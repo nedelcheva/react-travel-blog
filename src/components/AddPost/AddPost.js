@@ -22,16 +22,16 @@ export default function AddPost() {
                         <option value="australia">Australia</option>
                     </select>
 
-                    <label for="date">Date</label>
+                    <label name="date">Date</label>
                     <input type="date" name="date" required />
 
-                    <label for="article">Article</label>
+                    <label name="article">Article</label>
                     <textarea className="add-textarea" name="article" cols="42" rows="10" placeholder="Write the article..."></textarea>
 
-                    <label for="photo">Photo</label>
+                    <label name="photo">Photo</label>
                     <input className="add-photo" type="file" name="photo" placeholder="Add a photo" required />
 
-                    <button class="button-submit" type="submit">Publish</button>
+                    <button className="button-submit" type="submit">Publish</button>
                 </div>
             </form>
         </div>

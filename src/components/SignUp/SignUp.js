@@ -23,7 +23,6 @@ export default function SignUp() {
         } catch {
             setError('Failed to login')
         }
-        setLoading(false)
 
 
     }
@@ -32,17 +31,17 @@ export default function SignUp() {
     return (
         <div className="signUp">
             <form className="signUp-form" onSubmit={handleSubmit}>
-                <h1 className="title">Sign Up</h1>
+                <h1 className="title">Login</h1>
 
                 <div className="add-container">
 
-                    <label for="email">Email</label>
+                    <label name="email">Email</label>
                     <input type="email" placeholder="Enter E-Mail" ref={emailRef} name="email" required />
 
-                    <label for="psw">Password</label>
+                    <label name="psw">Password</label>
                     <input type="password" placeholder="Enter Password" ref={passwordRef} name="psw" required />
 
-                    <button disabled={loading} class="button-submit" type="submit">Sing Up</button>
+                    <button disabled={loading} className="button-submit" type="submit">Login</button>
                 </div>
             </form>
         </div>

@@ -12,7 +12,7 @@ import RegisterPage from './pages/RegisterPage/RegisterPage';
 
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
 import { AuthProvider } from './contexts/AuthContext';
-import privateRoute from './components/privateRoute';
+import PrivateRoute from './components/PrivateRoute';
 
 
 
@@ -25,9 +25,9 @@ function App() {
       <Routes>
         <Route path="/" exact element={<Home />} />
         <Route path="/all" exact element={<AllArticlesPage />} />
-        <privateRoute path="/add" exact element={<AddPage />} />
+        <Route path="/add" exact element={<PrivateRoute> <AddPage /> </PrivateRoute>} />
         <Route path="/all" exact element={<AllArticlesPage />} />
-        <Route path="/favourite" exact element={<privateRoute><MyFavouritesPage /></privateRoute>} />
+        <Route path="/favourite" exact element={<PrivateRoute> <MyFavouritesPage /> </PrivateRoute>} />
         <Route path="/contact" exact element={<ContactPage />} />
         <Route path="/signup" exact element={<SignUpPage />} />
         <Route path="/register" exact element={<RegisterPage />} />

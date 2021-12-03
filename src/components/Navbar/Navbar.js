@@ -11,14 +11,17 @@ export default function Navbar() {
     const navigate = useNavigate()
 
     async function handleLogout() {
+        
         setError('')
 
         try {
-            await logout()
-            navigate('/')
-        } catch {
-            setError('Failed to log out')
-        }
+             await logout()
+             console.log('out')
+             navigate('/')
+         } catch {
+             console.log('error')
+             setError('Failed to log out')
+         }
     }
 
 
@@ -34,25 +37,37 @@ export default function Navbar() {
                         <Link className="link" to="/all">ALL ARTICLES</Link>
                     </li>
                     <li className="navbar-left-menu-items">
-                        <Link className="link" to="/add">ADD A POST</Link>
+                        <Link className="link" to="/add"
+                        style={{ display: currentUser ? "" : "none"}}
+                        >ADD A POST</Link>
                     </li>
                     <li className="navbar-left-menu-items">
-                        <Link className="link" to="/favourite">MY FAVOURITES</Link>
+                        <Link className="link" to="/favourite"
+                        style={{ display: currentUser ? "" : "none"}}
+                        >MY FAVOURITES</Link>
                     </li>
                     <li className="navbar-left-menu-items">
-                        <Link className="link" to="/contact">CONTACTS</Link>
+                        <Link className="link" to="/contact"
+                        style={{ display: currentUser ? "" : "none"}}
+                        >CONTACTS</Link>
                     </li>
                 </ul>
             </div>
             <div className="navbar-right">
 
                 <button className="navbar-right-button">
-                <Link className="link" to="/signup">LOGIN</Link>
+                <Link className="link" to="/signup"
+                style={{ display: !currentUser ? "" : "none"}}
+                >LOGIN</Link>
                 </button>
                 <button className="navbar-right-button">
-                <Link className="link" to="/register">REGISTER</Link>
+                <Link className="link" to="/register"
+                style={{ display: !currentUser ? "" : "none"}}
+                >REGISTER</Link>
                 </button>
-                <button className="navbar-right-button" onClick={handleLogout}>LOGOUT</button>
+                <button className="navbar-right-button" onClick={handleLogout}
+                style={{ display: !currentUser ? "none" : ""}}
+                >LOGOUT</button>
 
             </div>
         </div>
