@@ -31,7 +31,7 @@ function App() {
         <Route path="/contact" exact element={<ContactPage />} />
         <Route path="/signup" exact element={<SignUpPage />} />
         <Route path="/register" exact element={<RegisterPage />} />
-        <Route path="/post/:postId" exact element={<DetailsPage />} />
+        <Route path="/post/:id" exact element={<DetailsPage />} />
       </Routes>
     </Router>
     </AuthProvider>

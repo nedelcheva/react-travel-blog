@@ -6,9 +6,6 @@ export default function HomePosts() {
     return (
         <div className="homePosts">
             <Post/>
-            <Post/>
-            <Post/>
-            <Post/>
         </div>
     )
 }
