@@ -1,8 +1,8 @@
 import React, { useState, } from 'react'
 import { useNavigate } from "react-router-dom"
 import './addPost.css'
-import firebaseApp, { db } from '../../firebase'
-import { collection, getDocs, addDoc } from "firebase/firestore"
+import  { db } from '../../firebase'
+import { collection,  addDoc } from "firebase/firestore"
 
 export default function AddPost() {
     const [title, setTitle] = useState("")

@@ -41,3 +41,7 @@
     width: 1000px;
     flex-wrap: wrap;
 }
+
+li {
+    list-style-type: none;
+}

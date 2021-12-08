@@ -10,7 +10,7 @@ import SignUpPage from './pages/SignUpPage/SignUpPage';
 import RegisterPage from './pages/RegisterPage/RegisterPage';
 
 
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { AuthProvider } from './contexts/AuthContext';
 import PrivateRoute from './components/PrivateRoute';
 

@@ -3,7 +3,7 @@ import './details.css'
 import { db } from '../../firebase'
 import { useState, useEffect } from 'react'
 import { collection, getDocs } from "firebase/firestore"
-import { useParams } from 'react-router'
+import { useParams } from 'react-router-dom'
 
 export default function Details() {
     const [posts, setPosts] = useState([])
@@ -19,18 +19,23 @@ export default function Details() {
     }, [])
 
     let { id } = useParams();
-    const currentPost = posts.find(el => el.id === id)
-    console.log(currentPost)
+    // const currentPost = posts.find(function (el){
+    //    return el.id == id
+    // } )
+    //const currentPost = posts.map((p) => p.id).filter((p) => p == id)
+    const current = posts.filter((p) => p.id === id)
+    const c = current[0]
+    console.log(c.title)
 
     return (
         <div className="details">
-            <img className="details-img" src={currentPost.photo}/>
-            <div className="details-title">{currentPost.title}</div>
+              <img className="details-img" src={c.photo}/>
+            <div className="details-title">{c.title}</div>
             <div className="details-wrapper">
                <div className="details-author">Author: Velimira Nedelcheva</div>
-            <div className="details-date">{currentPost.date}</div> 
+            <div className="details-date">{c.date}</div> 
             </div>
-            <div className="details-description">{currentPost.article}</div>
+            <div className="details-description">{c.article}</div>  
             
         </div>
     )
