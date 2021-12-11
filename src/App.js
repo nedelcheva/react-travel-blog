@@ -3,6 +3,7 @@ import Navbar from './components/Navbar/Navbar';
 import DetailsPage from './pages/DetailsPage/DetailsPage';
 import Home from './pages/Home/Home';
 import AddPage from './pages/AddPage/AddPage';
+import EditPage from './pages/EditPage/EditPage';
 import ContactPage from './pages/ContactPage/ContactPage';
 import AllArticlesPage from './pages/AllArticles/AllArticlesPage';
 import MyFavouritesPage from './pages/MyFavouritesPage/MyFavouritesPage';
@@ -26,6 +27,7 @@ function App() {
         <Route path="/" exact element={<Home />} />
         <Route path="/all" exact element={<AllArticlesPage />} />
         <Route path="/add" exact element={<PrivateRoute> <AddPage /> </PrivateRoute>} />
+        <Route path="/edit/:id" exact element={<PrivateRoute> <EditPage /> </PrivateRoute>} />
         <Route path="/all" exact element={<AllArticlesPage />} />
         <Route path="/favourite" exact element={<PrivateRoute> <MyFavouritesPage /> </PrivateRoute>} />
         <Route path="/contact" exact element={<ContactPage />} />

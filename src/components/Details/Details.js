@@ -3,7 +3,7 @@ import './details.css'
 import { db } from '../../firebase'
 import { useState, useEffect } from 'react'
 import { collection, getDocs } from "firebase/firestore"
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 
 export default function Details() {
     const [posts, setPosts] = useState([])
@@ -37,6 +37,8 @@ export default function Details() {
                                     <div className="details-date">{c.date}</div>
                                 </div>
                                 <div className="details-description">{c.article}</div>
+
+                                <Link className="link" to={`/edit/${c.id}`}>EDIT</Link>
 
                             </div>
                         </li>
