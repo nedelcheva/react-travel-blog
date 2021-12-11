@@ -20,7 +20,7 @@ export default function Post() {
         getPosts()
     }, [])
 
-
+console.log(posts)
     return (
         <div className="all-posts">
             {

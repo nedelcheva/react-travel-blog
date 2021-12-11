@@ -24,7 +24,6 @@ export default function SignUp() {
             setError('Failed to login')
         }
 
-
     }
 
 

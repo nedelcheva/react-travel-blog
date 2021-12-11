@@ -18,25 +18,32 @@ export default function Details() {
         getPosts()
     }, [])
 
+    console.log(posts)
     let { id } = useParams();
-    // const currentPost = posts.find(function (el){
-    //    return el.id == id
-    // } )
-    //const currentPost = posts.map((p) => p.id).filter((p) => p == id)
-    const current = posts.filter((p) => p.id === id)
-    const c = current[0]
-    console.log(c.title)
+    const currentPost = posts.filter((p) => p.id === id)
+    
 
     return (
         <div className="details">
-              <img className="details-img" src={c.photo}/>
-            <div className="details-title">{c.title}</div>
-            <div className="details-wrapper">
-               <div className="details-author">Author: Velimira Nedelcheva</div>
-            <div className="details-date">{c.date}</div> 
-            </div>
-            <div className="details-description">{c.article}</div>  
-            
+            {
+                currentPost.map((c) => {
+                    return (
+                        <li key={c.id}>
+                            <div className="details">
+                                <img className="details-img" src={c.photo} alt="" />
+                                <div className="details-title">{c.title}</div>
+                                <div className="details-wrapper">
+                                    <div className="details-author">Author: Velimira Nedelcheva</div>
+                                    <div className="details-date">{c.date}</div>
+                                </div>
+                                <div className="details-description">{c.article}</div>
+
+                            </div>
+                        </li>
+                    )
+                })
+            }
+
         </div>
     )
 }
