@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate, useParams } from "react-router-dom"
 import './edit.css'
 import { db } from '../../firebase'
-import { collection, addDoc, getDocs, doc, updateDoc } from "firebase/firestore"
+import { collection, getDocs, doc, updateDoc } from "firebase/firestore"
 
 export default function AddPost() {
     const [title, setTitle] = useState("")
@@ -14,31 +14,12 @@ export default function AddPost() {
 
     const postsCollectionRef = collection(db, "posts")
 
-    //  const publishPost = async () => {
-    //      await addDoc(postsCollectionRef, { article: article, category: category, date: date, photo: photo, title: title})
-    //      navigate('/register')
-    //  }
-
     const changeTitle = (e) => { setTitle(e.target.value) }
     const changeCategory = (e) => { setCategory(e.target.value) }
     const changeDate = (e) => { setDate(e.target.value) }
     const changeArticle = (e) => { setArticle(e.target.value) }
     const changePhoto = (e) => { setPhoto(e.target.value) }
 
-    const testOne = () => {
-        const postData = {
-            title,
-            category,
-            date,
-            article,
-            photo
-        }
-
-        addDoc(postsCollectionRef, postData)
-        //postsCollectionRef.push(postData)
-        navigate('/')
-
-    }
 
 
     /////////
@@ -58,17 +39,24 @@ export default function AddPost() {
 
     const currentPost = posts.filter((p) => p.id === id)
 
-    const updatePost = async () => {
+    const updatePost =  (id, c) => {
+        const cTitle = title == "" ? c.title : title
+        const cCategory = category == "" ? c.category : category
+        const cDate = date == "" ? c.date : date
+        const cArticle = article == "" ? c.article : article
+        const cPhoto = photo == "" ? c.photo : photo
+
         const postDoc = doc(db, "posts", id)
+        
         const newFields = {
-            title,
-            category,
-            date,
-            article,
-            photo
+            title:cTitle,
+            category:cCategory,
+            date:cDate,
+            article:cArticle,
+            photo:cPhoto
         }
-        await updateDoc(postDoc, newFields)
-        navigate('/post/id')
+        updateDoc(postDoc, newFields)
+        navigate('/')
     }
 
     return (
@@ -78,7 +66,7 @@ export default function AddPost() {
                     return (
                         <li key={c.id}>
                             <div className="add">
-                                <form className="add-form" onSubmit={updatePost} >
+                                <form className="add-form" onSubmit={ () => updatePost(c.id, c)} >
                                     <h1 className="title">Edit a travel post</h1>
 
                                     <div className="add-container">

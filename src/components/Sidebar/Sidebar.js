@@ -25,13 +25,6 @@ const Sidebar = (props) => {
                 </div>
 
             </div>
-            <div className="sidebar" {...props}>
-                <div className="recentPosts">
-                    <h1 className="recent-title">Recent Posts</h1>
-                    <h3 className="post-title">Two weeks in Mexico</h3>
-                    <p className="added-on">18.Februar.2022</p>
-                </div>
-            </div>
         </div>
     )
 }

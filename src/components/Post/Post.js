@@ -36,7 +36,7 @@ console.log(posts)
                                 </div>
                                 <div className="post-description">{post.article}</div>
 
-                                <Link className="link" to={`/post/${post.id}`}>DETAILS</Link>
+                                <Link className="link home-d" to={`/post/${post.id}`}>DETAILS</Link>
                             </div>
                         </li>
                     )

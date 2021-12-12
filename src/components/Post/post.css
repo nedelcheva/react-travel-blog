@@ -34,6 +34,7 @@
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
+    margin-bottom:15px;
 }
 
 .all-posts {
@@ -44,4 +45,14 @@
 
 li {
     list-style-type: none;
+}
+
+.home-d {
+    padding:10px;
+    border-bottom: 1px solid pink;
+}
+
+.home-d:hover{
+    background-color: pink;
+    color:white;
 }
