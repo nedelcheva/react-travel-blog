@@ -6,6 +6,7 @@ import { collection,  addDoc } from "firebase/firestore"
 
 export default function AddPost() {
     const [title, setTitle] = useState("")
+    const [author, setAuthor] = useState("")
     const [category, setCategory] = useState("")
     const [date, setDate] = useState("")
     const [article, setArticle] = useState("")
@@ -20,6 +21,7 @@ export default function AddPost() {
     //  }
 
     const changeTitle = (e) => {setTitle(e.target.value)}
+    const changeAuthor = (e) => {setAuthor(e.target.value)}
     const changeCategory = (e) => {setCategory(e.target.value)}
     const changeDate = (e) => {setDate(e.target.value)}
     const changeArticle = (e) => {setArticle(e.target.value)}
@@ -29,6 +31,7 @@ export default function AddPost() {
         //const dataRef = db.ref("posts")
         const postData = {
             title,
+            author,
             category,
             date,
             article,
@@ -50,6 +53,10 @@ export default function AddPost() {
                     <label name="title">Title</label>
                     <input type="text" placeholder="Title" name="title" required 
                     onChange={changeTitle} />
+
+                    <label name="author">Author</label>
+                    <input type="text" placeholder="Author" name="author" required 
+                    onChange={changeAuthor} />
 
                     <label name="cars">Choose a category</label>
 

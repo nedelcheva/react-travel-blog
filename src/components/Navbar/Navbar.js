@@ -42,11 +42,6 @@ export default function Navbar() {
                         >ADD A POST</Link>
                     </li>
                     <li className="navbar-left-menu-items">
-                        <Link className="link" to="/favourite"
-                        style={{ display: currentUser ? "" : "none"}}
-                        >MY FAVOURITES</Link>
-                    </li>
-                    <li className="navbar-left-menu-items">
                         <Link className="link" to="/contact"
                         style={{ display: currentUser ? "" : "none"}}
                         >CONTACTS</Link>
@@ -55,15 +50,11 @@ export default function Navbar() {
             </div>
             <div className="navbar-right">
 
-                <button className="navbar-right-button">
-                <Link className="link" to="/signup"
-                style={{ display: !currentUser ? "" : "none"}}
-                >LOGIN</Link>
+                <button className="navbar-right-button" style={{ display: !currentUser ? "" : "none"}}>
+                <Link className="link" to="/signup">LOGIN</Link>
                 </button>
-                <button className="navbar-right-button">
-                <Link className="link" to="/register"
-                style={{ display: !currentUser ? "" : "none"}}
-                >REGISTER</Link>
+                <button className="navbar-right-button"style={{ display: !currentUser ? "" : "none"}}>
+                <Link className="link" to="/register">REGISTER</Link>
                 </button>
                 <button className="navbar-right-button" onClick={handleLogout}
                 style={{ display: !currentUser ? "none" : ""}}

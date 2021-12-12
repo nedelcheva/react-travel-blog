@@ -6,7 +6,6 @@ import AddPage from './pages/AddPage/AddPage';
 import EditPage from './pages/EditPage/EditPage';
 import ContactPage from './pages/ContactPage/ContactPage';
 import AllArticlesPage from './pages/AllArticles/AllArticlesPage';
-import MyFavouritesPage from './pages/MyFavouritesPage/MyFavouritesPage';
 import SignUpPage from './pages/SignUpPage/SignUpPage';
 import RegisterPage from './pages/RegisterPage/RegisterPage';
 
@@ -29,7 +28,6 @@ function App() {
         <Route path="/add" exact element={<PrivateRoute> <AddPage /> </PrivateRoute>} />
         <Route path="/edit/:id" exact element={<PrivateRoute> <EditPage /> </PrivateRoute>} />
         <Route path="/all" exact element={<AllArticlesPage />} />
-        <Route path="/favourite" exact element={<PrivateRoute> <MyFavouritesPage /> </PrivateRoute>} />
         <Route path="/contact" exact element={<ContactPage />} />
         <Route path="/signup" exact element={<SignUpPage />} />
         <Route path="/register" exact element={<RegisterPage />} />

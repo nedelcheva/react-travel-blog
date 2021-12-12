@@ -40,8 +40,8 @@ export default function Details() {
                                 <img className="details-img" src={c.photo} alt="" />
                                 <div className="details-title">{c.title}</div>
                                 <div className="details-wrapper">
-                                    <div className="details-author">Author: Velimira Nedelcheva</div>
-                                    <div className="details-date">{c.date}</div>
+                                    <div className="details-author">Author: {c.author}</div>
+                                    <div className="details-date">Date added: {c.date}</div>
                                 </div>
                                 <div className="details-description">{c.article}</div>
                                 <div className="crud">

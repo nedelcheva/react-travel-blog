@@ -6,6 +6,7 @@ import { collection, getDocs, doc, updateDoc } from "firebase/firestore"
 
 export default function AddPost() {
     const [title, setTitle] = useState("")
+    const [author, setAuthor] = useState("")
     const [category, setCategory] = useState("")
     const [date, setDate] = useState("")
     const [article, setArticle] = useState("")
@@ -15,6 +16,7 @@ export default function AddPost() {
     const postsCollectionRef = collection(db, "posts")
 
     const changeTitle = (e) => { setTitle(e.target.value) }
+    const changeAuthor = (e) => { setAuthor(e.target.value) }
     const changeCategory = (e) => { setCategory(e.target.value) }
     const changeDate = (e) => { setDate(e.target.value) }
     const changeArticle = (e) => { setArticle(e.target.value) }
@@ -39,21 +41,23 @@ export default function AddPost() {
 
     const currentPost = posts.filter((p) => p.id === id)
 
-    const updatePost =  (id, c) => {
+    const updatePost = (id, c) => {
         const cTitle = title == "" ? c.title : title
+        const cAuthor = author == "" ? c.author : author
         const cCategory = category == "" ? c.category : category
         const cDate = date == "" ? c.date : date
         const cArticle = article == "" ? c.article : article
         const cPhoto = photo == "" ? c.photo : photo
 
         const postDoc = doc(db, "posts", id)
-        
+
         const newFields = {
-            title:cTitle,
-            category:cCategory,
-            date:cDate,
-            article:cArticle,
-            photo:cPhoto
+            title: cTitle,
+            author: cAuthor,
+            category: cCategory,
+            date: cDate,
+            article: cArticle,
+            photo: cPhoto
         }
         updateDoc(postDoc, newFields)
         navigate('/')
@@ -66,7 +70,7 @@ export default function AddPost() {
                     return (
                         <li key={c.id}>
                             <div className="add">
-                                <form className="add-form" onSubmit={ () => updatePost(c.id, c)} >
+                                <form className="add-form" onSubmit={() => updatePost(c.id, c)} >
                                     <h1 className="title">Edit a travel post</h1>
 
                                     <div className="add-container">
@@ -74,7 +78,11 @@ export default function AddPost() {
                                         <input type="text" placeholder="Title" name="title" defaultValue={c.title} required
                                             onChange={changeTitle} />
 
-                                        <label name="cars">Choose a category</label>
+                                        <label name="author">Author</label>
+                                        <input type="text" placeholder="Author" name="author" defaultValue={c.author} required
+                                            onChange={changeAuthor} />
+
+                                        <label name="category">Choose a category</label>
 
                                         <select name="category" className="add-category" defaultValue={c.category}
                                             onChange={changeCategory}  >
