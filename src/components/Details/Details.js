@@ -4,11 +4,13 @@ import { db } from '../../firebase'
 import { useState, useEffect } from 'react'
 import { collection, getDocs, deleteDoc, doc } from "firebase/firestore"
 import { useParams, Link, useNavigate } from 'react-router-dom'
+import { useAuth } from '../../contexts/AuthContext';
 
 export default function Details() {
     const [posts, setPosts] = useState([])
     const postsCollectionRef = collection(db, "posts")
     const navigate = useNavigate()
+    const {currentUser } = useAuth()
 
     useEffect(() => {
         const getPosts = async () => {
@@ -45,8 +47,8 @@ export default function Details() {
                                 </div>
                                 <div className="details-description">{c.article}</div>
                                 <div className="crud">
-                                    <Link className="link edit-l" to={`/edit/${c.id}`}>EDIT</Link>
-                                    <button className="delete" onClick = {() => deletePost(c.id)}>DELETE</button>
+                                    <Link className="link edit-l" to={`/edit/${c.id}`} style={{ display: currentUser ? "" : "none"}}>EDIT</Link>
+                                    <button className="delete" onClick = {() => deletePost(c.id)} style={{ display: currentUser ? "" : "none"}}>DELETE</button>
                                 </div>
                             </div>
                         </li>

@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 
 
-export default function Post() {
+export default function Post(props) {
     const [posts, setPosts] = useState([])
     const postsCollectionRef = collection(db, "posts")
 
@@ -20,7 +20,19 @@ export default function Post() {
         getPosts()
     }, [])
 
-console.log(posts)
+
+    useEffect(() => {
+        const current = () => {
+            const cat =  posts.filter((p) => p.category === props)
+             if (props.data !== '') {
+                setPosts(cat)
+            }
+        }
+        current();
+
+    }, [])
+
+    console.log(posts)
     return (
         <div className="all-posts">
             {

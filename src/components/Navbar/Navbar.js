@@ -41,11 +41,6 @@ export default function Navbar() {
                         style={{ display: currentUser ? "" : "none"}}
                         >ADD A POST</Link>
                     </li>
-                    <li className="navbar-left-menu-items">
-                        <Link className="link" to="/contact"
-                        style={{ display: currentUser ? "" : "none"}}
-                        >CONTACTS</Link>
-                    </li>
                 </ul>
             </div>
             <div className="navbar-right">
