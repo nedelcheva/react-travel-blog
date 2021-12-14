@@ -18,3 +18,14 @@
     height: 700px;
     background-size:cover;
 }
+
+@media all and (max-width: 1000px) {
+    .header-title {
+        text-align: center;
+    }
+
+    .header-img {
+        width: 100vw;
+    }
+
+}

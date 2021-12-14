@@ -1,4 +1,13 @@
 .homePosts{
     display: flex;
     flex-wrap: wrap;
+    max-height: 520px;
+    overflow: hidden;
+}
+
+@media all and (max-width: 1000px) {
+
+    .homePosts {
+        max-height: 1000px;
+    }
 }
