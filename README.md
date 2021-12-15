@@ -13,3 +13,5 @@ In order to run the project you need to have the following dependencies installe
     "web-vitals": "^1.1.2"
 
 Afterwards run the application from the client folder with npm start
+
+Deployed app: https://competent-hamilton-a0d4a7.netlify.app
