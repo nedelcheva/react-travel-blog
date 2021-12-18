@@ -21,7 +21,8 @@ export default function Details() {
         getPosts()
     }, [])
 
-    console.log(posts)
+    const currentU = currentUser.uid;
+    console.log(currentUser.uid)
     let { id } = useParams();
     const currentPost = posts.filter((p) => p.id === id)
 
@@ -47,8 +48,8 @@ export default function Details() {
                                 </div>
                                 <div className="details-description">{c.article}</div>
                                 <div className="crud">
-                                    <Link className="link edit-l" to={`/edit/${c.id}`} style={{ display: currentUser ? "" : "none"}}>EDIT</Link>
-                                    <button className="delete" onClick = {() => deletePost(c.id)} style={{ display: currentUser ? "" : "none"}}>DELETE</button>
+                                    <Link className="link edit-l" to={`/edit/${c.id}`} style={{ display: currentU === c.currentU ? "" : "none"}}>EDIT</Link>
+                                    <button className="delete" onClick = {() => deletePost(c.id)} style={{ display: currentU === c.currentU ? "" : "none"}}>DELETE</button>
                                 </div>
                             </div>
                         </li>

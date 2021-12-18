@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 import './addPost.css'
 import  { db } from '../../firebase'
 import { collection,  addDoc } from "firebase/firestore"
+import { useAuth } from '../../contexts/AuthContext';
 
 export default function AddPost() {
     const [title, setTitle] = useState("")
@@ -12,6 +13,7 @@ export default function AddPost() {
     const [article, setArticle] = useState("")
     const [photo, setPhoto] = useState("")
     const navigate = useNavigate()
+    const {currentUser } = useAuth()
 
     const postsCollectionRef = collection(db, "posts")
 
@@ -27,6 +29,8 @@ export default function AddPost() {
     const changeArticle = (e) => {setArticle(e.target.value)}
     const changePhoto = (e) => {setPhoto(e.target.value)}
 
+    const currentU = currentUser.uid;
+
     const testOne = () => {
         //const dataRef = db.ref("posts")
         const postData = {
@@ -35,7 +39,8 @@ export default function AddPost() {
             category,
             date,
             article,
-            photo
+            photo,
+            currentU
         }
 
         addDoc(postsCollectionRef, postData)
