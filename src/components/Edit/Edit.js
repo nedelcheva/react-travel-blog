@@ -42,12 +42,12 @@ export default function AddPost() {
     const currentPost = posts.filter((p) => p.id === id)
 
     const updatePost = (id, c) => {
-        const cTitle = title == "" ? c.title : title
-        const cAuthor = author == "" ? c.author : author
-        const cCategory = category == "" ? c.category : category
-        const cDate = date == "" ? c.date : date
-        const cArticle = article == "" ? c.article : article
-        const cPhoto = photo == "" ? c.photo : photo
+        const cTitle = title === "" ? c.title : title
+        const cAuthor = author === "" ? c.author : author
+        const cCategory = category === "" ? c.category : category
+        const cDate = date === "" ? c.date : date
+        const cArticle = article === "" ? c.article : article
+        const cPhoto = photo === "" ? c.photo : photo
 
         const postDoc = doc(db, "posts", id)
 
@@ -89,8 +89,7 @@ export default function AddPost() {
                                             <option value="cat">Category</option>
                                             <option value="europe">Europe</option>
                                             <option value="africa">Africa</option>
-                                            <option value="north-america">North America</option>
-                                            <option value="south-america">South America</option>
+                                            <option value="america">America</option>
                                             <option value="asia">Asia</option>
                                             <option value="australia">Australia</option>
                                         </select>

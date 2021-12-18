@@ -15,11 +15,10 @@ const Sidebar = (props) => {
                         <Link className="link categories-list-items" to={`/all/${"africa"}`}>Africa</Link>
                         </div>
                         <div className="categories-wrapper">
-                        <Link className="link categories-list-items" to={`/all/${"north"}`}>North America</Link>
-                        <Link className="link categories-list-items" to={`/all/${"south"}`}>South America</Link>
+                        <Link className="link categories-list-items" to={`/all/${"america"}`}>America</Link>
+                        <Link className="link categories-list-items" to={`/all/${"asia"}`}>Asia</Link>
                         </div>
                         <div className="categories-wrapper">
-                        <Link className="link categories-list-items" to={`/all/${"asia"}`}>Asia</Link>
                         <Link className="link categories-list-items" to={`/all/${"australia"}`}>Australia</Link>
                         </div>
                     </ul>

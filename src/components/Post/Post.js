@@ -21,16 +21,6 @@ export default function Post(props) {
     }, [])
 
 
-    useEffect(() => {
-        const current = () => {
-            const cat =  posts.filter((p) => p.category === props)
-             if (props.data !== '') {
-                setPosts(cat)
-            }
-        }
-        current();
-
-    }, [])
 
     console.log(posts)
     return (
