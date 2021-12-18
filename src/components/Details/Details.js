@@ -21,8 +21,9 @@ export default function Details() {
         getPosts()
     }, [])
 
-    const currentU = currentUser.uid;
-    console.log(currentUser.uid)
+    
+    const currentU = currentUser ? currentUser.uid : '';
+    
     let { id } = useParams();
     const currentPost = posts.filter((p) => p.id === id)
 
