@@ -14,4 +14,4 @@ In order to run the project you need to have the following dependencies installe
 
 Afterwards run the application from the client folder with npm start
 
-Deployed app: https://competent-hamilton-a0d4a7.netlify.app
+Deployed app: https://elastic-bhaskara-592767.netlify.app
