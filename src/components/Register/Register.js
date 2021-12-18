@@ -34,6 +34,7 @@ export default function Register() {
 
     return (
         <div className="register">
+            {error && <div className="error-msg">{error}</div>}
             <form className="register-form" onSubmit={handleSubmit}>
                 <h1 className="title">Register</h1>
 

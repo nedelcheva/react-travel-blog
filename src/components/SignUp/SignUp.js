@@ -21,14 +21,16 @@ export default function SignUp() {
             await login(emailRef.current.value, passwordRef.current.value)
             navigate('/')
         } catch {
-            setError('Failed to login')
+            setError('Wrong password or e-mail')
         }
+        setLoading(false)
 
     }
 
 
     return (
         <div className="signUp">
+            {error && <div className="error-msg">{error}</div>}
             <form className="signUp-form" onSubmit={handleSubmit}>
                 <h1 className="title">Login</h1>
 
@@ -39,7 +41,7 @@ export default function SignUp() {
 
                     <label name="psw">Password</label>
                     <input type="password" placeholder="Enter Password" ref={passwordRef} name="psw" required />
-
+                    
                     <button disabled={loading} className="button-submit" type="submit">Login</button>
                 </div>
             </form>

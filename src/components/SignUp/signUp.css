@@ -53,3 +53,16 @@ input[type=email], input[type=password]{
     background-color: pink;
     color: white;
 }
+
+.error-msg {
+    background-color: rgb(210, 68, 68);
+    font-size: 17px;
+    height: 33px;
+    text-align: center;
+    padding:0px 10px;
+    padding-top: 4px;
+    color: white;
+    position: absolute;
+    margin-top: 14px;
+    border-radius: 3px;
+}
